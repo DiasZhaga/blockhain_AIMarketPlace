@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>AI Model Marketplace</h1>
+    <div class="container">
+        <h2>List a new AI model</h2>
+        <form id="list-model-form">
+            <label for="name">Model Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="description">Model Description:</label>
+            <textarea id="description" name="description"></textarea><br><br>
+            <label for="price">Model Price:</label>
+            <input type="number" id="price" name="price"><br><br>
+            <button id="list-model-btn">List Model</button>
+        </form>
+
+        <h2>Available Models</h2>
+        <div id="models-list"></div>
+
+        <h2>Purchase a model</h2>
+        <form id="purchase-model-form">
+            <label for="model-id">Model ID:</label>
+            <input type="number" id="model-id" name="model-id"><br><br>
+            <button id="purchase-model-btn">Purchase Model</button>
+        </form>
+
+        <h2>Rate a purchased model</h2>
+        <form id="rate-model-form">
+            <label for="model-id-rate">Model ID:</label>
+            <input type="number" id="model-id-rate" name="model-id-rate"><br><br>
+            <label for="rating">Rating:</label>
+            <input type="number" id="rating" name="rating"><br><br>
+            <button id="rate-model-btn">Rate Model</button>
+        </form>
+
+        <h2>View model details</h2>
+        <form id="view-model-form">
+            <label for="model-id-view">Model ID:</label>
+            <input type="number" id="model-id-view" name="model-id-view"><br><br>
+            <button id="view-model-btn">View Model Details</button>
+        </form>
+
+        <h2>Withdraw funds</h2>
+        <form id="withdraw-funds-form">
+            <label for="recipient">Recipient Address:</label>
+            <input type="text" id="recipient" name="recipient"><br><br>
+            <button id="withdraw-funds-btn">Withdraw Funds</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.0/dist/web3.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
