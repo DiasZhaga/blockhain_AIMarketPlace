@@ -44,7 +44,8 @@
 // require('dotenv').config();
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const privateKey = 'your-ganache-private-key';
 
 module.exports = {
   /**
@@ -66,7 +67,7 @@ module.exports = {
     
     development: {
      host: "127.0.0.1",     // Localhost (default: none)
-     port: 7545,            // Standard Ethereum port (default: none)
+     port: 8545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
     
@@ -80,15 +81,15 @@ module.exports = {
     //   websocket: true         // Enable EventEmitter interface for web3 (default: false)
     // },
     //
-    // Useful for deploying to a public network.
-    // Note: It's important to wrap the provider as a function to ensure truffle uses a new provider every time.
-    // goerli: {
-    //   provider: () => new HDWalletProvider(MNEMONIC, `https://goerli.infura.io/v3/${PROJECT_ID}`),
-    //   network_id: 5,       // Goerli's id
-    //   confirmations: 2,    // # of confirmations to wait between deployments. (default: 0)
-    //   timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-    //   skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
-    // },
+    
+    sepolia: {
+      provider: () => new HDWalletProvider(mnemonic, 'privateKey', 'http://127.0.0.1:8545'),
+      network_id: 11155111, // Sepolia's network id
+      gas: 5500000,         // Adjust the gas limit according to your contract's needs
+      confirmations: 2,     // Number of confirmations to wait between deployments
+      timeoutBlocks: 200,   // Number of blocks before a deployment times out
+      skipDryRun: true      // Skip dry run before migrations
+    },
     //
     // Useful for private networks
     // private: {

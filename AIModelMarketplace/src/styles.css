@@ -1,50 +1,93 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, segoe ui, helvetica neue, Arial, sans-serif;
+    background-color: #d4f7ff;
+    margin: 0;
+    padding: 0;
 }
 
-.container {
-    width: 80%;
-    margin: 40px auto;
+.marketplace-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    grid-gap: 20px; /* Gap between the cards */
+    max-width: 1200px;
+    width: 100%;
+}
+
+.model-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-form {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
+.model-header {
     margin-bottom: 10px;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+input[type="text"], input[type="number"], textarea {
+    width: 80%; /* Reduce width to make fields shorter */
+    padding: 8px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: #fff;
+    width: 80%; /* Shorten the button width */
+    padding: 8px;
+    background-color: #007bff;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button:hover {
-    background-color: #3e8e41;
+    background-color: #0056b3;
 }
 
-#models-list {
-    margin-bottom: 20px;
+.message {
+    margin-top: 10px;
+    display: none;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* For the models listing */
+    grid-gap: 20px;
+}
+
+.model-item {
+    background-color: #e3f2fd;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
 }

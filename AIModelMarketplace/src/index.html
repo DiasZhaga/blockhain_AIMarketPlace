@@ -7,52 +7,65 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>AI Model Marketplace</h1>
-    <div class="container">
-        <h2>List a new AI model</h2>
-        <form id="list-model-form">
-            <label for="name">Model Name:</label>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="description">Model Description:</label>
-            <textarea id="description" name="description"></textarea><br><br>
-            <label for="price">Model Price:</label>
-            <input type="number" id="price" name="price"><br><br>
-            <button id="list-model-btn">List Model</button>
-        </form>
+    <div class="marketplace-container">
+        <h1>AI Model Marketplace</h1>
 
-        <h2>Available Models</h2>
-        <div id="models-list"></div>
+        <div class="grid-container">
+            <!-- Available Models Section -->
+            <div class="model-card available-models-container">
+                <h2>Available Models</h2>
+                <div id="model-list" class="models-grid"></div>
+            </div>
 
-        <h2>Purchase a model</h2>
-        <form id="purchase-model-form">
-            <label for="model-id">Model ID:</label>
-            <input type="number" id="model-id" name="model-id"><br><br>
-            <button id="purchase-model-btn">Purchase Model</button>
-        </form>
+            <!-- List Model Section -->
+            <div class="model-card">
+                <h3>List Model</h3>
+                <input type="text" id="name" placeholder="Enter Model Name">
+                <textarea id="description" placeholder="Enter Model Description"></textarea>
+                <input type="number" id="price" placeholder="Enter Model Price">
+                <button class="purchase-btn">List Model</button>
+            </div>
 
-        <h2>Rate a purchased model</h2>
-        <form id="rate-model-form">
-            <label for="model-id-rate">Model ID:</label>
-            <input type="number" id="model-id-rate" name="model-id-rate"><br><br>
-            <label for="rating">Rating:</label>
-            <input type="number" id="rating" name="rating"><br><br>
-            <button id="rate-model-btn">Rate Model</button>
-        </form>
+            <!-- Purchase Model Section -->
+            <div class="model-card">
+                <h3>Purchase Model</h3>
+                <input type="text" id="model-id-purchase" placeholder="Enter Model ID">
+                <button id="purchase-model-btn" class="purchase-btn">Purchase</button>
+                <div id="purchase-message" class="message"></div>
+            </div>
 
-        <h2>View model details</h2>
-        <form id="view-model-form">
-            <label for="model-id-view">Model ID:</label>
-            <input type="number" id="model-id-view" name="model-id-view"><br><br>
-            <button id="view-model-btn">View Model Details</button>
-        </form>
+            <!-- Rate Model Section -->
+            <div class="model-card">
+                <h3>Rate Model</h3>
+                <input type="text" id="modelId" placeholder="Enter Model ID">
+                <input type="number" id="rate" min="1" max="5" placeholder="Rate (1-5)">
+                <button class="rate-btn">Rate</button>
+                <div id="rate-message" class="message"></div>
+            </div>
 
-        <h2>Withdraw funds</h2>
-        <form id="withdraw-funds-form">
-            <label for="recipient">Recipient Address:</label>
-            <input type="text" id="recipient" name="recipient"><br><br>
-            <button id="withdraw-funds-btn">Withdraw Funds</button>
-        </form>
+            <!-- View Model Details Section -->
+            <div class="model-card">
+                <h3>View Model Details</h3>
+                <input type="text" id="model-id-view" placeholder="Enter Model ID">
+                <button class="purchase-btn">View Model Details</button>
+                <div id="view-message" class="message"></div>
+            </div>
+
+            <!-- Withdraw Funds Section -->
+            <div class="model-card">
+                <h3>Withdraw Funds</h3>
+                <input type="text" id="recipient" placeholder="Enter Recipient Address">
+                <button class="purchase-btn">Withdraw Funds</button>
+                <div id="withdraw-message" class="message"></div>
+            </div>
+        </div>
+
+        <!-- Model Details Display Section -->
+        <div id="model-details" class="model-details"></div>
     </div>
+
+    <!-- Message Section -->
+    <div id="message" class="message"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/web3@1.3.0/dist/web3.min.js"></script>
     <script src="script.js"></script>
