@@ -15,11 +15,11 @@ The smart contract, `AIModelMarketplace`, manages all functionalities related to
    node server.js
 
 ## Examples
-1.**List a New AI Model:** Users can enter the model name, description, and price to list a new AI model.
-2.**Purchase a Model:** Users can input the model ID to purchase it.
-3.**Rate a Model:** After purchasing, users can rate the model on a scale of 1 to 5.
-4.**View Model Details:** Users can view the details of a model, including its name, description, price, and average rating.
-5.**Withdraw Funds:** The contract owner can withdraw funds accumulated from model sales.
+1. **List a New AI Model:** Users can enter the model name, description, and price to list a new AI model.
+2. **Purchase a Model:** Users can input the model ID to purchase it.
+3. **Rate a Model:** After purchasing, users can rate the model on a scale of 1 to 5.
+4. **View Model Details:** Users can view the details of a model, including its name, description, price, and average rating.
+5. **Withdraw Funds:** The contract owner can withdraw funds accumulated from model sales.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
